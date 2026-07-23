@@ -5,6 +5,7 @@ public Action OnPlayerRunCmd(int client, int &buttons, int &impulse, float vel[3
 {
 	if (GetEntProp(client, Prop_Send, "m_bViewingCYOAPDA") && GetEntProp(client, Prop_Send, "m_iStunFlags") & TF_STUNFLAG_SLOWDOWN)
 	{
+		buttons &= ~IN_JUMP;
 		vel = NULL_VECTOR;
 	}
 	
